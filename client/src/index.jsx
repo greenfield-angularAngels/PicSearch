@@ -16,12 +16,16 @@ class App extends React.Component {
       something: '',
       // twentyFiveUrls: [],
       twentyFiveUrls: data,
+      currentPicRows: data[0].urls[0],
       originImgUrl: {"imageUri": "https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg"},
       userInput: ''
     };
     this.postOriginalImg = this.postOriginalImg.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.showNextRow = this.showNextRow.bind(this);
+    this.showNextRow = this.showNextRow.bind(this);
+    this.showPrevRow = this.showPrevRow.bind(this);
   }
 
   /***ComponentDidmount
@@ -61,6 +65,14 @@ class App extends React.Component {
       originImgUrl: originImgUrl
     });
     // this.postOriginalImg(originImgUrl);
+  }
+
+  showPrevRow() {
+    
+  }
+
+  showNextRow() {
+
   }
 
   render() {
@@ -107,9 +119,13 @@ class App extends React.Component {
        <div className="well"></div> 
       {/* <hr/> */}
 
-      <div className="col-md-1 col-lg-1"/>
+      
     
       <div className="row">
+      <div className="col-md-1 col-lg-1">
+        {/* <p className="btn btn-info btn-lg"><span className="glyphicon glyphicon-search"></span></p> */}
+        <p className="btn btn-info btn-lg"><span className="glyphicon glyphicon-arrow-down"></span></p>
+      </div>
       {this.state.twentyFiveUrls.map((guessAndUrls) => {
         return (
           <div className="col-md-2 col-lg-2">
@@ -124,8 +140,16 @@ class App extends React.Component {
             </div>
         );
       })}
-        </div>
+      <div className="col-md-1 col-lg-1">
+        {/* <p className="btn btn-info btn-lg"><span className="glyphicon glyphicon-search"></span></p> */}
+        <p 
+        className="btn btn-info btn-lg"
+        onClick={this.showNextRow}
+        ><span className="glyphicon glyphicon-arrow-up"></span></p>
+      </div>
+      </div> {/* end of row  */}
     </div> 
+      
     );
   }
 }
