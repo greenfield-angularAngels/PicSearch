@@ -134,7 +134,31 @@ class App extends React.Component {
                 </div>
               </div>
             </div>
+            <div className="col-md-1"/>
+            <div className="col-md-4">
+                <div className="well maxHeight">
+                  <h1> ~~ LIKED FILES ~~ </h1>
+                  {/* {[1,2,3,4,5].map((idx) => {
+                    return (<h2 key={idx}>{'LIKED FILE ' + idx + '-->'}</h2>)
+                  })} */}
+                  {this.state.twentyFiveUrls.map((guessAndUrls, idx) => {
+                    return (
+                      <div className="col-md-2 col-lg-2" key={idx}>
+                          <div className="thumbnail">
+                            <img src={guessAndUrls.urls[this.state.currentImgRowIdx]} />
+                            <div className="row">
+                            </div>
+                          </div>
+                        </div>
+                    );
+                  })}
+                </div>
+            </div>
           </div>
+
+          
+
+          
 
       <div className="well"></div> 
       <div className="row">
@@ -155,7 +179,7 @@ class App extends React.Component {
       <div className="col-md-1 col-lg-1">
         
         <p 
-        className="btn btn-info btn-lg"
+        className="btn btn-info btn-lg marginBottom"
         onClick={this.showPrevRow}
         ><span className="glyphicon glyphicon-arrow-up"></span></p>
         <p 
@@ -165,7 +189,6 @@ class App extends React.Component {
 
       </div>
       </div> {/* end of row  */}
-      {/* </div> */}
 
     </div>
     </div> 
