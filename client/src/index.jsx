@@ -5,9 +5,10 @@ import $ from 'jquery';
 import data from './dummy_data.js';
 // import ImageList from './components/ImageList.jsx';
 // import SavedList from './components/SavedList.jsx';
-// http://www.michiganduckrescueandsanctuary.com/wp-content/uploads/2014/12/marold_donate_transparent_504.png
+// "http://www.michiganduckrescueandsanctuary.com/wp-content/uploads/2014/12/marold_donate_transparent_504.png"
 // https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg
 // const originalImgUrl = {"imageUri": "https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg"};
+// // "https://www.sciencedaily.com/images/2017/05/170502204556_1_900x600.jpg"
 
 class App extends React.Component {
   constructor(props) {
@@ -37,6 +38,12 @@ class App extends React.Component {
   }
 
   postOriginalImg(originalImgUrl) {
+
+    var gif = {"imageUri": "https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2014/04/scr_01.gif"};
+    this.setState({
+      originImgUrl: gif
+    })
+  
     $.ajax({
       method: 'POST',
       url: '/images',
@@ -44,7 +51,8 @@ class App extends React.Component {
       success: (results) => {
         console.log('Client POST Original Img Success', results);
         this.setState({
-          twentyFiveUrls: results
+          twentyFiveUrls: results,
+           originImgUrl: originalImgUrl
         })
       },
       error: function(err) {
@@ -65,7 +73,7 @@ class App extends React.Component {
     this.setState({
       originImgUrl: originImgUrl
     });
-    // this.postOriginalImg(originImgUrl);
+    this.postOriginalImg(originImgUrl);
   }
 
   showPrevRow() {
