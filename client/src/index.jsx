@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 
 import data from './dummy_data.js';
-import ImageList from './components/ImageList.jsx';
-import SavedList from './components/SavedList.jsx';
+// import ImageList from './components/ImageList.jsx';
+// import SavedList from './components/SavedList.jsx';
 // http://www.michiganduckrescueandsanctuary.com/wp-content/uploads/2014/12/marold_donate_transparent_504.png
 // https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg
 // const originalImgUrl = {"imageUri": "https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg"};
