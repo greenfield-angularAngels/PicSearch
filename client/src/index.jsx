@@ -16,9 +16,9 @@ class App extends React.Component {
       something: '',
       // twentyFiveUrls: [],
       twentyFiveUrls: data,
-      currentPicRows: data[0].urls[0],
       originImgUrl: {"imageUri": "https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg"},
-      userInput: ''
+      userInput: '',
+      currentImgRowIdx: 0
     };
     this.postOriginalImg = this.postOriginalImg.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -130,7 +130,7 @@ class App extends React.Component {
         return (
           <div className="col-md-2 col-lg-2">
               <div className="thumbnail">
-                <img src={guessAndUrls.urls[0]} />
+                <img src={guessAndUrls.urls[this.state.currentImgRowIdx]} />
                 <div className="row">
                   <div className="col-md-2 col-lg-2"/>
                    <div className="col-md-4 col-lg-4"> <a href="#" className="btn btn-primary" role="button">Like !</a></div> 
