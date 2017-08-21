@@ -18,7 +18,8 @@ class App extends React.Component {
       twentyFiveUrls: data,
       originImgUrl: {"imageUri": "https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg"},
       userInput: '',
-      currentImgRowIdx: 0
+      currentImgRowIdx: 0,
+      fakeIdx: 0,
     };
     this.postOriginalImg = this.postOriginalImg.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -68,11 +69,27 @@ class App extends React.Component {
   }
 
   showPrevRow() {
-    
+    // console.log('showPrevRowClick');
+    var idx = this.state.currentImgRowIdx
+    // console.log('idx: ', idx)
+
+    idx = idx === 0 ? 4 : idx - 1;
+
+    this.setState({
+      currentImgRowIdx: idx
+    })
   }
 
   showNextRow() {
+    // console.log('showNextRowClick');
+    var idx = this.state.currentImgRowIdx
+    // console.log('idx: ', idx)
 
+    idx = idx === 4 ? 0 : idx + 1;
+
+    this.setState({
+      currentImgRowIdx: idx
+    })
   }
 
   render() {
@@ -116,19 +133,19 @@ class App extends React.Component {
           </div>
       </div>
 
-       <div className="well"></div> 
+      <div className="well"></div> 
       {/* <hr/> */}
-
-      
-    
       <div className="row">
       <div className="col-md-1 col-lg-1">
         {/* <p className="btn btn-info btn-lg"><span className="glyphicon glyphicon-search"></span></p> */}
-        <p className="btn btn-info btn-lg"><span className="glyphicon glyphicon-arrow-down"></span></p>
+        <p 
+        className="btn btn-info btn-lg"
+        onClick={this.showPrevRow}
+        ><span className="glyphicon glyphicon-arrow-up"></span></p>
       </div>
-      {this.state.twentyFiveUrls.map((guessAndUrls) => {
+      {this.state.twentyFiveUrls.map((guessAndUrls, idx) => {
         return (
-          <div className="col-md-2 col-lg-2">
+          <div className="col-md-2 col-lg-2" key={idx}>
               <div className="thumbnail">
                 <img src={guessAndUrls.urls[this.state.currentImgRowIdx]} />
                 <div className="row">
@@ -141,11 +158,11 @@ class App extends React.Component {
         );
       })}
       <div className="col-md-1 col-lg-1">
-        {/* <p className="btn btn-info btn-lg"><span className="glyphicon glyphicon-search"></span></p> */}
         <p 
         className="btn btn-info btn-lg"
         onClick={this.showNextRow}
-        ><span className="glyphicon glyphicon-arrow-up"></span></p>
+        ><span className="glyphicon glyphicon-arrow-down"></span></p>
+
       </div>
       </div> {/* end of row  */}
     </div> 
