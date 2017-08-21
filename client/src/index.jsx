@@ -6,7 +6,7 @@ import data from './dummy_data.js';
 // import ImageList from './components/ImageList.jsx';
 // import SavedList from './components/SavedList.jsx';
 // "http://www.michiganduckrescueandsanctuary.com/wp-content/uploads/2014/12/marold_donate_transparent_504.png"
-// https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg
+// "https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg"
 // const originalImgUrl = {"imageUri": "https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg"};
 // "https://www.sciencedaily.com/images/2017/05/170502204556_1_900x600.jpg"
 // "http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/12_powerhouse_vegetables_slideshow/intro_cream_of_crop.jpg"
@@ -101,7 +101,7 @@ class App extends React.Component {
     return (
       <div>
 
-      <div className="well" id="title"><h1>ImgNest</h1></div>
+      <div className="well" id="title"><h1>PicSeach</h1></div>
       
       <div className="marginLeft">
 
