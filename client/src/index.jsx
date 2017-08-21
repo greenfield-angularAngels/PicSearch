@@ -8,7 +8,8 @@ import data from './dummy_data.js';
 // "http://www.michiganduckrescueandsanctuary.com/wp-content/uploads/2014/12/marold_donate_transparent_504.png"
 // https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg
 // const originalImgUrl = {"imageUri": "https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg"};
-// // "https://www.sciencedaily.com/images/2017/05/170502204556_1_900x600.jpg"
+// "https://www.sciencedaily.com/images/2017/05/170502204556_1_900x600.jpg"
+// "http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/12_powerhouse_vegetables_slideshow/intro_cream_of_crop.jpg"
 
 class App extends React.Component {
   constructor(props) {
@@ -77,9 +78,7 @@ class App extends React.Component {
   }
 
   showPrevRow() {
-    // console.log('showPrevRowClick');
     var idx = this.state.currentImgRowIdx
-    // console.log('idx: ', idx)
 
     idx = idx === 0 ? 4 : idx - 1;
 
@@ -89,9 +88,7 @@ class App extends React.Component {
   }
 
   showNextRow() {
-    // console.log('showNextRowClick');
     var idx = this.state.currentImgRowIdx
-    // console.log('idx: ', idx)
 
     idx = idx === 4 ? 0 : idx + 1;
 
@@ -106,11 +103,12 @@ class App extends React.Component {
 
       <div className="well" id="title"><h1>ImgNest</h1></div>
       
-      <div className="container"> 
+      <div className="marginLeft">
+
         <div className="row">
           <div className="form-group">
 
-            <div className="col-md-6 col-md-offset-2 col-lg-6 col-lg-offset-2">
+            <div className="col-md-6 col-lg-6">
               <input 
                 type="text" 
                 className="form-control input-lg" 
@@ -125,32 +123,21 @@ class App extends React.Component {
 
           </div>
         </div>
-      </div> 
+       
 
 
-      <div className="container">
           <div className="row">
-            <div className="col-md-8 col-md-offset-2">
+            <div className="col-md-6">
               <div className="thumbnail">
                 <img src={this.state.originImgUrl.imageUri} />
                 <div className="caption">
-                  {/* <h3>Thumbnail label</h3> */}
                 </div>
               </div>
             </div>
           </div>
-      </div>
 
       <div className="well"></div> 
-      {/* <hr/> */}
       <div className="row">
-      <div className="col-md-1 col-lg-1">
-        {/* <p className="btn btn-info btn-lg"><span className="glyphicon glyphicon-search"></span></p> */}
-        <p 
-        className="btn btn-info btn-lg"
-        onClick={this.showPrevRow}
-        ><span className="glyphicon glyphicon-arrow-up"></span></p>
-      </div>
       {this.state.twentyFiveUrls.map((guessAndUrls, idx) => {
         return (
           <div className="col-md-2 col-lg-2" key={idx}>
@@ -166,6 +153,11 @@ class App extends React.Component {
         );
       })}
       <div className="col-md-1 col-lg-1">
+        
+        <p 
+        className="btn btn-info btn-lg"
+        onClick={this.showPrevRow}
+        ><span className="glyphicon glyphicon-arrow-up"></span></p>
         <p 
         className="btn btn-info btn-lg"
         onClick={this.showNextRow}
@@ -173,6 +165,9 @@ class App extends React.Component {
 
       </div>
       </div> {/* end of row  */}
+      {/* </div> */}
+
+    </div>
     </div> 
       
     );
