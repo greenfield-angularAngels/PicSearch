@@ -3,20 +3,12 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 
 import data from './dummy_data.js';
-// import ImageList from './components/ImageList.jsx';
-// import SavedList from './components/SavedList.jsx';
-// "http://www.michiganduckrescueandsanctuary.com/wp-content/uploads/2014/12/marold_donate_transparent_504.png"
-// "https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg"
-// const originalImgUrl = {"imageUri": "https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg"};
-// "https://www.sciencedaily.com/images/2017/05/170502204556_1_900x600.jpg"
-// "http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/12_powerhouse_vegetables_slideshow/intro_cream_of_crop.jpg"
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       something: '',
-      // twentyFiveUrls: [],
       twentyFiveUrls: data,
       originImgUrl: {"imageUri": "https://s4.favim.com/orig/48/puppy-lion-cute-Favim.com-445038.jpg"},
       userInput: '',
@@ -31,9 +23,6 @@ class App extends React.Component {
     this.showPrevRow = this.showPrevRow.bind(this);
   }
 
-  /***ComponentDidmount
-  Will make an ajax call to the server, which will grab all the saved images for the user, then render that to the user via setState.
-  ***/
   componentDidMount() {
     // this.postOriginalImg(this.state.originImgUrl);
   }
@@ -101,7 +90,7 @@ class App extends React.Component {
     return (
       <div>
 
-      <div className="well" id="title"><h1>PicSeach</h1></div>
+      <div className="well" id="title"><h1>PicSearch</h1></div>
       
       <div className="marginLeft">
 
@@ -138,9 +127,6 @@ class App extends React.Component {
             <div className="col-md-4">
                 <div className="well maxHeight">
                   <h1> ~~ LIKED FILES ~~ </h1>
-                  {/* {[1,2,3,4,5].map((idx) => {
-                    return (<h2 key={idx}>{'LIKED FILE ' + idx + '-->'}</h2>)
-                  })} */}
                   {this.state.twentyFiveUrls.map((guessAndUrls, idx) => {
                     return (
                       <div className="col-md-2 col-lg-2" key={idx}>
